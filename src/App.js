@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import MessagePage from './pages/MessagePage';
+import CoupleSlideshowPage from './pages/CoupleSlideshowPage';
+import GiftPage from './pages/GiftPage';
 
 function App() {
+  const audioRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Correct path to song.mp3 using PUBLIC_URL */}
+      <audio ref={audioRef} src={`${process.env.PUBLIC_URL}/song.mp3`} loop />
+
+      <Routes>
+        <Route path="/" element={<LandingPage audioRef={audioRef} />} />
+        <Route path="/message" element={<MessagePage />} />
+        <Route path="/couple-slideshow" element={<CoupleSlideshowPage />} />
+        <Route path="/gift" element={<GiftPage />} />
+      </Routes>
+    </>
   );
 }
 
