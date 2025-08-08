@@ -2,7 +2,7 @@
   "name": "my-birthday-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mahajanruhi.github.io/website",
+ "homepage": "https://mahajanruhi.github.io/rooba-gift",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.4",
